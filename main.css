@@ -1,0 +1,148 @@
+/* Der All-Selektor: die erste Ebene der CSS-Hierarchie */
+*{
+    padding:0;
+    margin:0;
+}
+
+/* Der body-Selektor: Attribute des Elements "body"*/
+body{
+    background-color:#ffffff;
+    color:#1a181b;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,h2,h3,p{
+    padding-bottom:0.5em;
+    padding-left:15px;
+}
+
+h1{
+    padding-top:0.5em;
+}
+
+#wrapper {
+    width: 1000px;
+    min-height: 400px;
+    margin:auto;
+    margin-top:1.5rem;
+    background-color:#dddddd;
+}
+
+#navigation{
+    font-size: 16px;
+    background-color:#cccccc;
+    color: #333333;
+    padding:0.5rem;
+    margin-bottom:1rem;
+    margin:auto;
+    /* transition:all 1.0s cubic-bezier(.17,.67,.83,.67); */
+    /* transition:all 0.5s ease-in-out; */
+    
+}
+
+/* #navigation:hover{
+    font-size:18px;
+    padding:1rem;
+    margin-bottom:2rem;
+} */
+
+#navigation ul{
+    
+    text-align:center;
+    margin:auto;
+}
+
+#navigation ul:hover{
+    
+}
+
+#navigation li{
+    list-style-type:none;
+    font-size:1em;
+    font-weight:bold;
+    display: inline-block;
+    padding-right:0.75em;
+    padding-left:0.75em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 200px;
+    text-align: center;
+    border-style:solid;
+    border-color:#cccccc;
+    border-width: 1px;
+    transition: 0.1s ease-in;
+}
+
+#navigation li:hover{
+    background-color: #dddddd;
+    border-color:#000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    box-shadow: 1px 1px #888888;
+}
+
+#header{
+
+}
+
+article{
+    color:#1a181b;
+    background-color: #cccccc;
+    border:#000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    margin:2em;
+    padding: 2.5em;
+    box-shadow: 1px 1px #888888;
+    text-align:justify;
+    max-width: 70%;
+    transition: 1s ease-in-out;
+
+}
+
+#leftbound{
+    margin-left:-2em;
+    margin-right:auto;
+}
+
+#leftbound:hover{
+    margin-left:0.5em;
+}
+
+
+#rightbound{
+    margin-right:-2em;
+    margin-left:auto;
+}
+
+#rightbound:hover{
+    margin-right:0.5em;
+}
+
+#articleentry{
+    padding:0;
+    margin-bottom: 0.75em;
+}
+
+audio{
+    margin:1em;
+}
+
+a:link, a:visited {
+    color:#1a181b;
+    text-decoration:none;
+    cursor: pointer;
+  }
+
+#footer{
+    background-color:#666666;
+    padding: 3em;
+    min-height:200px;
+    color:#dddddd;
+}
+
+#footer_logo{
+    display:inline-block;
+}
