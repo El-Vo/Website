@@ -80,31 +80,78 @@
                     <p>to be done</p>
                 </article>
                 <section>
-                    <h1>Bildgenerator</h1>
-                    <canvas id="Wand" width="800" height="600">
+                    <h1>Canvaselement</h1>
+                    <canvas id="atom" width="1000" height="1000">
                         Der Browser unterstützt offensichtlich kein Canvas-Element.
                     </canvas>
+
+                    <img id="atom_no_electrons" width="0" height="0" src="assets/atom_no_electrons_1000px.png"
+                        alt="Atom ohne Elektronen" />
+
+                    <script>
+                        var c = document.getElementById("atom");
+                        var ctx = c.getContext("2d");
+                        var centerX = c.width * 0.5;
+                        var centerY = c.height * 0.5;
+                        var atomRadius = c.width * 0.05;
+                        var atomBorderColor = "#999999";
+                        var atomFillColor = "#BBBBBB";
+                        var ellipseColor = "#AAAAAA";
+                        var electronColor = "#999999";
+                        
+                        var img = document.getElementById("atom_no_electrons");
+                        ctx.drawImage(img, 1, -1);
+
+                        var ellipseWidth = c.width * 0.1;
+                        var ellipseHeight = c.height * 0.26;
+
+                        var electronRadius = c.width * 0.01;
+                        
+                        /* for (let ellipseRot = 0.0; ellipseRot < 0.25; ellipseRot = ellipseRot + 0.25) {
+                            ctx.beginPath();
+                            ctx.ellipse(centerX, centerY, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
+                            ctx.lineWidth = atomRadius / 8;
+                            ctx.strokeStyle = ellipseColor;
+                            ctx.stroke();
+
+                            electronX = centerX;
+                            electronY = centerY + ellipseWidth;
+                            ctx.beginPath();
+                            ctx.arc(electronX, electronY, electronRadius, 0, 2 * Math.PI);
+                            ctx.fillStyle = electronColor;
+                            ctx.fill();
+                            ctx.lineWidth = electronRadius / 10;
+                            ctx.strokeStyle = electronColor;
+                            electron = ctx.stroke();
+                        }
+
+                        ctx.beginPath();
+                        ctx.arc(centerX, centerY, atomRadius, 0, 2 * Math.PI);
+                        ctx.fillStyle = atomFillColor;
+                        ctx.fill();
+                        ctx.lineWidth = atomRadius / 10;
+                        ctx.strokeStyle = atomBorderColor;
+                        ctx.stroke();
+ */
+                        function animate() {
+                            setInterval(drawElectron())
+                    }
+
+                        function drawElectron(time = Date()){
+                            ctx.beginPath();
+                            ctx.arc(electronX, electronY, electronRadius, 0, 2 * Math.PI);
+                            ctx.fillStyle = electronColor;
+                            ctx.fill();
+                            ctx.lineWidth = electronRadius / 10;
+                            ctx.strokeStyle = electronColor;
+                            electron = ctx.stroke();
+                        }
+                    </script>
+
 
                     <br>
                     <div id="der-text"></div>
                     <button id="der-button" onclick="getData();this.innerHTML = '...';">get data</button>
-
-
-                    <!-- <script>
-                    var cv01=document.getElementById("Meine erste Canvas!");
-                    var ctx=cv01.getContext('2d');
-
-                    // var img=new Image();
-                    // img.src='assets/Hoover Dam 2018 Groß.jpeg';
-                    ctx.drawImage('assets/Hoover Dam 2018 Groß.jpeg',0,0);
-                    // geht nicht, da hier ein IMG Element benötigt wird und keine URI
-                    const img = new Image();        
-                    img.src = 'assets/Hoover Dam 2018 Groß.jpeg';        
-                    img.onload = () => {          
-                    ctx.drawImage(img, 0, 0);        };
-
-
-                </script> -->
                 </section>
             </section>
             <script>
