@@ -90,6 +90,7 @@
 
                     <script>
                         var c = document.getElementById("atom");
+                        c.addEventListener("mousedown", beschleunigeElectron, false);
                         var ctx = c.getContext("2d");
                         var centerX = c.width * 0.5;
                         var centerY = c.height * 0.5;
@@ -98,54 +99,70 @@
                         var atomFillColor = "#BBBBBB";
                         var ellipseColor = "#AAAAAA";
                         var electronColor = "#999999";
-                        
-                        var img = document.getElementById("atom_no_electrons");
-                        ctx.drawImage(img, 1, -1);
 
                         var ellipseWidth = c.width * 0.1;
                         var ellipseHeight = c.height * 0.26;
 
                         var electronRadius = c.width * 0.01;
-                        
-                        /* for (let ellipseRot = 0.0; ellipseRot < 0.25; ellipseRot = ellipseRot + 0.25) {
-                            ctx.beginPath();
-                            ctx.ellipse(centerX, centerY, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
-                            ctx.lineWidth = atomRadius / 8;
-                            ctx.strokeStyle = ellipseColor;
-                            ctx.stroke();
 
-                            electronX = centerX;
-                            electronY = centerY + ellipseWidth;
+                        var counter = 0;
+                        var countDown = false;
+                        var circleX = centerX;
+                        var circleY = centerY;
+                        var beschlfaktor = 1;
+
+                        function drawAtom() {
                             ctx.beginPath();
-                            ctx.arc(electronX, electronY, electronRadius, 0, 2 * Math.PI);
-                            ctx.fillStyle = electronColor;
-                            ctx.fill();
-                            ctx.lineWidth = electronRadius / 10;
-                            ctx.strokeStyle = electronColor;
-                            electron = ctx.stroke();
+                            ctx.clearRect(0, 0, c.width, c.height);
+                            ctx.closePath();
+
+                            for (let ellipseRot = 0.0; ellipseRot < 1; ellipseRot = ellipseRot + 0.25) {
+                                ctx.beginPath();
+                                ctx.ellipse(centerX, centerY, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
+                                ctx.lineWidth = atomRadius / 8;
+                                ctx.strokeStyle = ellipseColor;
+                                ctx.stroke();
+
+                                if (ellipseRot == 0.0) {
+                                    circleX = (centerX + ellipseHeight * 2.5) + (Math.cos((counter + 1.7) * beschlfaktor* 0.6) - 2.5) * ellipseHeight;
+                                    circleY = (centerY + ellipseWidth * 2.5) + (Math.sin((counter + 1.7) * beschlfaktor* 0.6) - 2.5) * ellipseWidth;
+                                } else if (ellipseRot == 0.5) {
+                                    circleX = (centerX + ellipseWidth * 2.5) + (Math.sin((counter + 0.5) * beschlfaktor * 1.1) - 2.5) * ellipseWidth;
+                                    circleY = (centerY + ellipseHeight * 2.5) + (Math.cos((counter + 0.5) * beschlfaktor*1.1) - 2.5) * ellipseHeight;
+                                } else if (ellipseRot == 0.25) {
+                                    circleX = (centerX + c.width * 0.49) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
+                                    circleY = (centerY + c.width * 0.7) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.55) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (1.35);
+                                } else {
+                                    circleX = (centerX + c.width * 0.49) - ((Math.sin(counter * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos(counter * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
+                                    circleY = (centerY - c.width * 0.02) - ((Math.cos(counter * beschlfaktor) - 2.5) * ellipseHeight) * (0.55) + ((Math.sin(counter * beschlfaktor) - 2.5) * ellipseWidth) * (1.35);
+                                }
+
+                                electronX = centerX;
+                                electronY = centerY + ellipseWidth;
+                                ctx.beginPath();
+                                ctx.arc(circleX, circleY, electronRadius, 0, 2 * Math.PI);
+                                ctx.fillStyle = electronColor;
+                                ctx.fill();
+                                ctx.lineWidth = electronRadius / 10;
+                                ctx.strokeStyle = electronColor;
+                                electron = ctx.stroke();
+
+                                ctx.beginPath();
+                                ctx.arc(centerX, centerY, atomRadius, 0, 2 * Math.PI);
+                                ctx.fillStyle = atomFillColor;
+                                ctx.fill();
+                                ctx.lineWidth = atomRadius / 10;
+                                ctx.strokeStyle = atomBorderColor;
+                                ctx.stroke();
+                            }
+
+                            counter = counter + 0.05;
                         }
 
-                        ctx.beginPath();
-                        ctx.arc(centerX, centerY, atomRadius, 0, 2 * Math.PI);
-                        ctx.fillStyle = atomFillColor;
-                        ctx.fill();
-                        ctx.lineWidth = atomRadius / 10;
-                        ctx.strokeStyle = atomBorderColor;
-                        ctx.stroke();
- */
-                        function animate() {
-                            setInterval(drawElectron())
-                    }
-
-                        function drawElectron(time = Date()){
-                            ctx.beginPath();
-                            ctx.arc(electronX, electronY, electronRadius, 0, 2 * Math.PI);
-                            ctx.fillStyle = electronColor;
-                            ctx.fill();
-                            ctx.lineWidth = electronRadius / 10;
-                            ctx.strokeStyle = electronColor;
-                            electron = ctx.stroke();
+                        function beschleunigeElectron () {
+                            beschlfaktor = Math.random()*3;
                         }
+                        setInterval(drawAtom, 45);
                     </script>
 
 
