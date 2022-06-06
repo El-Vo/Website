@@ -1,183 +1,209 @@
 /* Der All-Selektor: die erste Ebene der CSS-Hierarchie */
-*{
-
-}
+* {}
 
 /* Der body-Selektor: Attribute des Elements "body"*/
-body{
-    background-color:#ffffff;
-    color:#1a181b;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+    background-color: #ffffff;
+    color: #1a181b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1,h2,h3,p{
-    padding-bottom:0.5em;
-    padding-left:15px;
+h1,
+h2,
+h3,
+p {
+    padding-bottom: 0.5em;
+    padding-left: 15px;
 }
 
-h1{
-    padding-top:0.5em;
+h1 {
+    padding-top: 0.5em;
 }
 
 #wrapper {
     width: 1000px;
     min-height: 400px;
-    margin:auto;
-    margin-top:1.5rem;
-    background-color:#dddddd;
+    margin: auto;
+    margin-top: 1.5rem;
+    background-color: #dddddd;
 }
 
-#navigation{
+#navigation {
     font-size: 16px;
-    background-color:#cccccc;
+    background-color: #cccccc;
     color: #333333;
-    padding:0.5rem;
-    margin-bottom:1rem;
-    margin:auto;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin: auto;
 }
 
-#navigation ul{
-    
-    text-align:center;
-    margin:auto;
+#navigation ul {
+
+    text-align: center;
+    margin: auto;
 }
 
-#navigation li{
-    list-style-type:ngrid-one;
-    font-size:1em;
-    font-weight:bold;
+#navigation li {
+    list-style-type: ngrid-one;
+    font-size: 1em;
+    font-weight: bold;
     display: inline-block;
-    padding-right:0.75em;
-    padding-left:0.75em;
+    padding-right: 0.75em;
+    padding-left: 0.75em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     width: 200px;
     text-align: center;
-    border-style:solid;
-    border-color:#cccccc;
+    border-style: solid;
+    border-color: #cccccc;
     border-width: 1px;
     transition: 0.1s ease-in;
 }
 
-#navigation li:hover{
+#navigation li:hover {
     background-color: #dddddd;
-    border-color:#000000;
+    border-color: #000000;
     border-style: solid;
     border-radius: 3px;
     border-width: 1px;
     box-shadow: 1px 1px #888888;
 }
 
-article{
-    color:#1a181b;
+article {
+    color: #1a181b;
     background-color: #cccccc;
-    border:#000000;
+    border: #000000;
     border-style: solid;
     border-radius: 3px;
     border-width: 1px;
-    margin:2em;
+    margin: 2em;
     padding: 2.5em;
     box-shadow: 1px 1px #888888;
-    text-align:justify;
+    text-align: justify;
     max-width: 70%;
     transition: 1s ease-in-out;
-
+    margin-left: 0em;
+    margin-right: auto;
 }
 
-#leftbound{
-    margin-left:0em;
-    margin-right:auto;
+article:hover {
+    margin-left: 0.5em;
 }
 
-#leftbound:hover{
-    margin-left:0.5em;
+article:nth-child(odd) {
+    color: #1a181b;
+    background-color: #cccccc;
+    border: #000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    margin: 2em;
+    padding: 2.5em;
+    box-shadow: 1px 1px #888888;
+    text-align: justify;
+    max-width: 70%;
+    transition: 1s ease-in-out;
+    margin-right: 0;
+    margin-left: auto;
 }
 
-
-#rightbound{
-    margin-right:0;
-    margin-left:auto;
+article:nth-child(odd):hover {
+    margin-right: 0.5em;
 }
 
-#rightbound:hover{
-    margin-right:0.5em;
-}
-
-#articleentry{
-    padding:0;
+#articleentry {
+    padding: 0;
     margin-bottom: 0.75em;
 }
 
-audio{
-    margin:1em;
+audio {
+    margin: 1em;
 }
 
-a:link, a:visited {
-    color:#1a181b;
-    text-decoration:ngrid-one;
+a:link,
+a:visited {
+    color: #1a181b;
+    text-decoration: ngrid-one;
     cursor: pointer;
-  }
+}
 
-#footer{
-    background-color:#666666;
+#footer {
+    background-color: #666666;
     padding: 3em;
-    min-height:200px;
-    color:#dddddd;
+    min-height: 200px;
+    color: #dddddd;
 }
 
-#footer_logo{
-    display:inline-block;
+#footer_logo {
+    display: inline-block;
 }
 
-#content{
-    display:inline-block;
-    justify-content:center;
+#content {
+    display: inline-block;
+    justify-content: center;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-areas: 
-    'grid-one grid-two grid-two';
-  /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
-  gap: 10px;
-  /* grid-auto-rows: minmax(50px, auto); */
-  background-color:aqua;
-  justify-content: center;
+    display:grid;
+    grid-template-columns:2fr.1fr;
+    grid-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(1fr, auto);
+
+    border:#000000;
+    border-style:solid;
 }
 
-.grid-one {
-    /* grid-column: 1 / 4;
-    grid-row: 1; */
+.grid-container > div{
     border:#000000;
-    border-width:1px;
-    border-style:solid;
-    margin:2vw;
-  }
-  .grid-two {
-    /* grid-column: 1 / 3;
-    grid-row: 2 / 3; */
-    border:#000000;
-    border-width:1px;
-    border-style:dashed;
-    margin-left:2vw;
-  }/*
-  .grid-three {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    border:#000000;
-    border-width:1px;
-    border-style:dotted;
-    margin-right:5vw;
-  }
-   .grid-four {
-    grid-column: 3;
-    grid-row: 3;
-  } 
-  .five {
-    grid-column: 2;
-    grid-row: 4;
-  }
-  .six {
-    grid-column: 3;
-    grid-row: 4;
-  } */
+    border-style: dashed;
+
+}
+
+#atom {
+    width:1000px;
+    height:1000px;
+}
+
+
+/* Tablets */
+@media screen and (max-width:1280px) {
+    .grid-container {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-gap: 1em;
+        grid-auto-rows: minmax(100px, auto);
+        grid-auto-columns: minmax(1fr, auto);
+
+        border:brown;
+        background-color: brown;
+        border-style:solid;
+    }
+
+    #atom {
+        width:500px;
+        height:500px;
+        border:#000000;
+        border-style:groove;
+    } 
+}
+
+/* Smartphones */
+@media screen and (max-width:700px) {
+    .grid-container {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-gap: 1em;
+        grid-auto-rows: minmax(100px, auto);
+        grid-auto-columns: minmax(1fr, auto);
+
+        border:aqua;
+        background-color: aqua;
+        border-style:solid;
+    }
+
+    #atom {
+        width:300px;
+        height:300px;
+    }
+}
