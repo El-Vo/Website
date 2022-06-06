@@ -1,7 +1,6 @@
 /* Der All-Selektor: die erste Ebene der CSS-Hierarchie */
 *{
-    padding:0;
-    margin:0;
+
 }
 
 /* Der body-Selektor: Attribute des Elements "body"*/
@@ -35,16 +34,7 @@ h1{
     padding:0.5rem;
     margin-bottom:1rem;
     margin:auto;
-    /* transition:all 1.0s cubic-bezier(.17,.67,.83,.67); */
-    /* transition:all 0.5s ease-in-out; */
-    
 }
-
-/* #navigation:hover{
-    font-size:18px;
-    padding:1rem;
-    margin-bottom:2rem;
-} */
 
 #navigation ul{
     
@@ -52,12 +42,8 @@ h1{
     margin:auto;
 }
 
-#navigation ul:hover{
-    
-}
-
 #navigation li{
-    list-style-type:none;
+    list-style-type:ngrid-one;
     font-size:1em;
     font-weight:bold;
     display: inline-block;
@@ -82,10 +68,6 @@ h1{
     box-shadow: 1px 1px #888888;
 }
 
-#header{
-
-}
-
 article{
     color:#1a181b;
     background-color: #cccccc;
@@ -103,7 +85,7 @@ article{
 }
 
 #leftbound{
-    margin-left:-2em;
+    margin-left:0em;
     margin-right:auto;
 }
 
@@ -113,7 +95,7 @@ article{
 
 
 #rightbound{
-    margin-right:-2em;
+    margin-right:0;
     margin-left:auto;
 }
 
@@ -132,7 +114,7 @@ audio{
 
 a:link, a:visited {
     color:#1a181b;
-    text-decoration:none;
+    text-decoration:ngrid-one;
     cursor: pointer;
   }
 
@@ -147,6 +129,55 @@ a:link, a:visited {
     display:inline-block;
 }
 
-#atom {
-
+#content{
+    display:inline-block;
+    justify-content:center;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'grid-one grid-two grid-two';
+  /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+  gap: 10px;
+  /* grid-auto-rows: minmax(50px, auto); */
+  background-color:aqua;
+  justify-content: center;
+}
+
+.grid-one {
+    /* grid-column: 1 / 4;
+    grid-row: 1; */
+    border:#000000;
+    border-width:1px;
+    border-style:solid;
+    margin:2vw;
+  }
+  .grid-two {
+    /* grid-column: 1 / 3;
+    grid-row: 2 / 3; */
+    border:#000000;
+    border-width:1px;
+    border-style:dashed;
+    margin-left:2vw;
+  }/*
+  .grid-three {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    border:#000000;
+    border-width:1px;
+    border-style:dotted;
+    margin-right:5vw;
+  }
+   .grid-four {
+    grid-column: 3;
+    grid-row: 3;
+  } 
+  .five {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .six {
+    grid-column: 3;
+    grid-row: 4;
+  } */
