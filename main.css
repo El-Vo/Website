@@ -93,7 +93,7 @@ article:nth-child(odd):hover {
     margin-right: 0.5em;
 }
 
-#articleentry {
+article > h2,p {
     padding: 0;
     margin-bottom: 0.75em;
 }
@@ -137,6 +137,27 @@ a:visited {
 #atom {
     width: 30vw;
     height: 30vw;
+}
+
+#Start{}
+
+#Explanation{}
+
+#Chatbot{
+
+}
+
+#Button {
+    color: #1a181b;
+    background-color: #cccccc;
+    border: #000000;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+#Antwort {
+
 }
 
 

@@ -23,35 +23,35 @@
         <h1>OpenAI Showcase</h1>
         <nav>
             <ul>
-                <li><a href="start.html">Start</a></li>
-                <li><a href="was_ist_gpt3.html">Wie funktioniert das?</a></li>
-                <li><a href="marv_chat.html">Teste den Chatbot!</a></li>
+                <li><a href="#Start">Start</a></li>
+                <li><a href="#Explanation">Was steckt dahinter?</a></li>
+                <li><a href="#Chatbot">Teste den Chatbot!</a></li>
             </ul>
         </nav>
     </div>
     <div class="grid-container">
-            <div>
+            <div id="Start">
                 <article>
-                    <h2 id="articleentry">Dies ist ein "Article"-Element.</h2>
-                    <p id="articleentry">Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
+                    <h2>Dies ist ein "Article"-Element.</h2>
+                    <p>Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
                         Hierbei
                         können etwa
                         Widgets, Forumbeiträge oder Userbeiträge in Articleelementen aufgefasst und gekapselt werden.
                     </p>
-                    <p id="articleentry">Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
+                    <p>Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
                         Articleelements
                         sein. Sections
                         stellen semantische Abgrenzungen dar, Articles sind "eigenständige" Inhaltsblöcke, die über
                         einen thematischen Zusammenhang hinausgehen.</p>
                 </article>
                 <article>
-                    <h2 id="articleentry">Dies ist ein weiteres "Article"-Element.</h2>
-                    <p id="articleentry">Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
+                    <h2>Dies ist ein weiteres "Article"-Element.</h2>
+                    <p>Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
                         Hierbei
                         können etwa
                         Widgets, Forumbeiträge oder Userbeiträge in Articleelementen aufgefasst und gekapselt werden.
                     </p>
-                    <p id="articleentry">Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
+                    <p>Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
                         Articleelements
                         sein. Sections
                         stellen semantische Abgrenzungen dar, Articles sind "eigenständige" Inhaltsblöcke, die über
@@ -140,10 +140,10 @@
                 setInterval(drawAtom, 45);
             </script>
         </div>
-        <div>
-            <h1>Audio und Video</h1>
+        <div id="Explanation">
+            <h2>Was macht OpenAI?</h2>
                 <article>
-                    <h2>Audio-Sample</h2>
+                    <h3>Audio-Sample</h3>
                     <audio controls>
                         Die Audio Datei konnte nicht eingebunden werden!
                         <source src="assets/RB61 Zugbus beschleunigt.wav" type="audio/wav">
@@ -152,58 +152,63 @@
                     </audio>
                 </article>
                 <article>
-                    <h2>Video-Sample</h2>
+                    <h3>Video-Sample</h3>
                     <p>to be done</p>
                 </article>
         </div>
+        <div>Plathalter für .svg</div>
+        <div id="Chatbot">
+            <h2>Teste den Chatbot!</h2>
+            <article>
+                <div id="Antwort"></div>
+                <button id="Button" onclick="getData();this.innerHTML = '...';">Stelle eine Frage</button>
+            </article>
+           
+            <script>
+                let text = "";
+                function getData() {
+                    let prompt = window.prompt("gib mir daten");
+                    let myMsg = document.createElement("div");
+                    myMsg.innerHTML = prompt;
+                    document.getElementById("Antwort").append(myMsg);
+                    text += prompt;
+                    $.ajax({
+                        url: 'https://api.openai.com/v1/engines/text-davinci-002/completions',
+                        type: 'POST',
+                        headers: {
+                            'Authorization': 'Bearer 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',
+                            'Content-Type': 'application/json'
+                        },
+                        data: JSON.stringify({
+                            'prompt': prompt,
+                            'temperature': 0.9,
+                            'max_tokens': 60,
+                            'top_p': 0.9,
+                            'frequency_penalty': 2.0,
+                            'presence_penalty': 0.0
+                        }),
+                        success: function (result) {
+                            let textZurück = result.choices[0].text;
+                            $('#Button').html("get data");
+        
+                            let msg = document.createElement("div");
+                            msg.innerHTML = textZurück;
+                            document.getElementById("Antwort").append(msg);
+                            text += textZurück
+                        },
+                        error: function (error) {
+                            alert("Cannot get data");
+                            $('#Button').html("get data");
+                        }
+                    });
+                }
+            </script>
+        </div>
+        <div>
+            Hier soll meine Anfrage hin.
+        </div>
     </div>
 
-
-
-    <br>
-    <div id="der-text"></div>
-    <button id="der-button" onclick="getData();this.innerHTML = '...';">get data</button>
-    <script>
-
-        let text = "";
-        function getData() {
-            let prompt = window.prompt("gib mir daten");
-            let myMsg = document.createElement("div");
-            myMsg.innerHTML = prompt;
-            document.getElementById("der-text").append(myMsg);
-            text += prompt;
-            $.ajax({
-                url: 'https://api.openai.com/v1/engines/text-davinci-002/completions',
-                type: 'POST',
-                headers: {
-                    'Authorization': 'Bearer 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',
-                    'Content-Type': 'application/json'
-                },
-                data: JSON.stringify({
-                    'prompt': prompt,
-                    'temperature': 0.9,
-                    'max_tokens': 60,
-                    'top_p': 0.9,
-                    'frequency_penalty': 2.0,
-                    'presence_penalty': 0.0
-                }),
-                success: function (result) {
-                    let textZurück = result.choices[0].text;
-                    $('#der-button').html("get data");
-
-                    let msg = document.createElement("div");
-                    msg.innerHTML = textZurück;
-                    document.getElementById("der-text").append(msg);
-                    text += textZurück
-                },
-                error: function (error) {
-                    alert("Cannot get data");
-                    $('#der-button').html("get data");
-                }
-            });
-        }
-
-    </script>
     <div id="footer">
         <p>Autor: Elias Vollrath, 2022</p>
         <img src="assets/atom_mono_bold_640.png" alt="Logo" width="120" height="120" id="footer_logo" />
