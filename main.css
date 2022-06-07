@@ -105,7 +105,7 @@ audio {
 a:link,
 a:visited {
     color: #1a181b;
-    text-decoration: ngrid-one;
+    text-decoration:none;
     cursor: pointer;
 }
 
@@ -125,7 +125,7 @@ a:visited {
     grid-template-columns:2fr 1fr;
     gap: 2.5em 5em;
     grid-auto-rows: minmax(100px, auto);
-    grid-auto-columns: minmax(1fr, auto);
+    grid-auto-columns: minmax(10px, auto);
 
     align-items: center;
     justify-items:stretch;
@@ -167,8 +167,6 @@ a:visited {
         display:grid;
         grid-template-columns:1fr;
         gap: 3em 0em; 
-        grid-auto-rows: minmax(100px, auto);
-        grid-auto-columns: minmax(1fr, auto);
     }
 
     #atom {
@@ -178,13 +176,11 @@ a:visited {
 }
 
 /* Smartphones */
-@media screen and (max-width:700px) {
+@media screen and (max-width:640px) {
     .grid-container {
         display:grid;
         grid-template-columns:1fr;
         gap: 3em 0em;
-        grid-auto-rows: minmax(100px, auto);
-        grid-auto-columns: minmax(1fr, auto);
     }
 
     #atom {
