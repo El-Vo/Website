@@ -20,14 +20,6 @@ h1 {
     padding-top: 0.5em;
 }
 
-#wrapper {
-    width: 1000px;
-    min-height: 400px;
-    margin: auto;
-    margin-top: 1.5rem;
-    background-color: #dddddd;
-}
-
 #navigation {
     font-size: 16px;
     background-color: #cccccc;
@@ -80,7 +72,7 @@ article {
     padding: 2.5em;
     box-shadow: 1px 1px #888888;
     text-align: justify;
-    max-width: 70%;
+    width: 70%;
     transition: 1s ease-in-out;
     margin-left: 0em;
     margin-right: auto;
@@ -101,7 +93,7 @@ article:nth-child(odd) {
     padding: 2.5em;
     box-shadow: 1px 1px #888888;
     text-align: justify;
-    max-width: 70%;
+    width: 70%;
     transition: 1s ease-in-out;
     margin-right: 0;
     margin-left: auto;
@@ -138,31 +130,22 @@ a:visited {
     display: inline-block;
 }
 
-#content {
-    display: inline-block;
-    justify-content: center;
-}
-
 .grid-container {
     display:grid;
-    grid-template-columns:2fr.1fr;
-    grid-gap: 1em;
+    grid-template-columns:2fr 1fr;
+    gap: 5em 5em;
     grid-auto-rows: minmax(100px, auto);
     grid-auto-columns: minmax(1fr, auto);
 
-    border:#000000;
-    border-style:solid;
-}
+    align-items: center;
+    justify-items:stretch;
 
-.grid-container > div{
-    border:#000000;
-    border-style: dashed;
-
+    margin:2.5em;
 }
 
 #atom {
-    width:1000px;
-    height:1000px;
+    width: 30vw;
+    height: 30vw;
 }
 
 
@@ -171,20 +154,14 @@ a:visited {
     .grid-container {
         display:grid;
         grid-template-columns:1fr;
-        grid-gap: 1em;
+        gap: 3em 0em; 
         grid-auto-rows: minmax(100px, auto);
         grid-auto-columns: minmax(1fr, auto);
-
-        border:brown;
-        background-color: brown;
-        border-style:solid;
     }
 
     #atom {
-        width:500px;
-        height:500px;
-        border:#000000;
-        border-style:groove;
+        width:50vw;
+        height:50vw;
     } 
 }
 
@@ -193,17 +170,31 @@ a:visited {
     .grid-container {
         display:grid;
         grid-template-columns:1fr;
-        grid-gap: 1em;
+        gap: 3em 0em;
         grid-auto-rows: minmax(100px, auto);
         grid-auto-columns: minmax(1fr, auto);
-
-        border:aqua;
-        background-color: aqua;
-        border-style:solid;
     }
 
     #atom {
-        width:300px;
-        height:300px;
+        width:70vw;
+        height:70vw;;
+    }
+
+    article {
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+    
+    article:hover {
+        margin-left: 0em;
+    }
+    
+    article:nth-child(odd) {
+        margin-right: 0em;
+        margin-left: 0em;
+    }
+    
+    article:nth-child(odd):hover {
+        margin-right: 0em;
     }
 }
