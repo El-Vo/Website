@@ -10,7 +10,7 @@
     <meta name="keywords" content="WI_WS20-I, Einzelleistung, Web Design">
     <meta name="author" content="elias.vollrath">
     <meta name="robots" content="noindex, nofollow">
-    <link href="assets/atom_mono_bold_640.png" rel="icon">
+    <link href="assets/atom_no_electrons_logo_20.png" rel="icon">
     <!-- rel="shortcut icon" ist nicht konform, Webautoren sollen laut Mozilla Docs es auf keinen Fall mehr verwenden -->
     <link href="main.css" rel="stylesheet" type="text/css">
 
@@ -19,53 +19,45 @@
 </head>
 
 <body>
-
     <div id="navigation">
+        <h1>OpenAI Showcase</h1>
         <nav>
             <ul>
-                <li><a href="start.html">Start</a></li>
-                <li><a href="was_ist_gpt3.html">Was ist GPT-3?</a></li>
-                <li><a href="marv_chat.html">Chatte los!</a></li>
+                <li><a href="#Start">Start</a></li>
+                <li><a href="#Explanation">Was steckt dahinter?</a></li>
+                <li><a href="#Chatbot">Teste den Chatbot!</a></li>
             </ul>
         </nav>
     </div>
-
     <div class="grid-container">
-        <div>
-            <div>
-                <div id="header">
-                    <header>
-                        <h1>OpenAi Testprojekt</h1>
-                    </header>
-                </div>
+            <div id="Start">
                 <article>
-                    <h2 id="articleentry">Dies ist ein "Article"-Element.</h2>
-                    <p id="articleentry">Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
+                    <h2>Dies ist ein "Article"-Element.</h2>
+                    <p>Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
                         Hierbei
                         können etwa
                         Widgets, Forumbeiträge oder Userbeiträge in Articleelementen aufgefasst und gekapselt werden.
                     </p>
-                    <p id="articleentry">Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
+                    <p>Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
                         Articleelements
                         sein. Sections
                         stellen semantische Abgrenzungen dar, Articles sind "eigenständige" Inhaltsblöcke, die über
                         einen thematischen Zusammenhang hinausgehen.</p>
                 </article>
                 <article>
-                    <h2 id="articleentry">Dies ist ein weiteres "Article"-Element.</h2>
-                    <p id="articleentry">Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
+                    <h2>Dies ist ein weiteres "Article"-Element.</h2>
+                    <p>Ein Articleelement ist ein in sich abgeschlossenes Element eines Dokuments.
                         Hierbei
                         können etwa
                         Widgets, Forumbeiträge oder Userbeiträge in Articleelementen aufgefasst und gekapselt werden.
                     </p>
-                    <p id="articleentry">Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
+                    <p>Ein Section-Element kann sowohl innerhalb als auch außerhalb eines
                         Articleelements
                         sein. Sections
                         stellen semantische Abgrenzungen dar, Articles sind "eigenständige" Inhaltsblöcke, die über
                         einen thematischen Zusammenhang hinausgehen.</p>
                 </article>
             </div>
-        </div>
         <div>
             <canvas id="atom" width="1000" height="1000">
                 Der Browser unterstützt offensichtlich kein Canvas-Element.
@@ -83,10 +75,10 @@
                 var ellipseColor = "#AAAAAA";
                 var electronColor = "#999999";
 
-                var ellipseWidth = c.width * 0.1;
-                var ellipseHeight = c.height * 0.26;
+                var ellipseWidth = c.width * 0.18;
+                var ellipseHeight = c.height * 0.46;
 
-                var electronRadius = c.width * 0.01;
+                var electronRadius = atomRadius * 0.5;
 
                 var counter = 0;
                 var countDown = false;
@@ -99,10 +91,10 @@
                     ctx.clearRect(0, 0, c.width, c.height);
                     ctx.closePath();
 
-                    for (let ellipseRot = 0.0; ellipseRot < 1; ellipseRot = ellipseRot + 0.25) {
+                    for (let ellipseRot = 0; ellipseRot < 1; ellipseRot = ellipseRot + 0.25) {
                         ctx.beginPath();
                         ctx.ellipse(centerX, centerY, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
-                        ctx.lineWidth = atomRadius / 8;
+                        ctx.lineWidth = atomRadius / 4;
                         ctx.strokeStyle = ellipseColor;
                         ctx.stroke();
 
@@ -113,10 +105,10 @@
                             circleX = (centerX + ellipseWidth * 2.5) + (Math.sin((counter + 0.5) * beschlfaktor * 1.1) - 2.5) * ellipseWidth;
                             circleY = (centerY + ellipseHeight * 2.5) + (Math.cos((counter + 0.5) * beschlfaktor * 1.1) - 2.5) * ellipseHeight;
                         } else if (ellipseRot == 0.25) {
-                            circleX = (centerX + c.width * 0.49) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
-                            circleY = (centerY + c.width * 0.7) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.55) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (1.35);
+                            circleX = (centerX + c.width * 0.87) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
+                            circleY = (centerY + c.width * 1.25) + ((Math.cos((counter + 3.1) * beschlfaktor) - 2.5) * ellipseHeight) * (0.55) + ((Math.sin((counter + 3.1) * beschlfaktor) - 2.5) * ellipseWidth) * (1.35);
                         } else {
-                            circleX = (centerX + c.width * 0.49) - ((Math.sin(counter * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos(counter * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
+                            circleX = (centerX + c.width * 0.865) - ((Math.sin(counter * beschlfaktor) - 2.5) * ellipseWidth) * (0) + ((Math.cos(counter * beschlfaktor) - 2.5) * ellipseHeight) * (0.75);
                             circleY = (centerY - c.width * 0.02) - ((Math.cos(counter * beschlfaktor) - 2.5) * ellipseHeight) * (0.55) + ((Math.sin(counter * beschlfaktor) - 2.5) * ellipseWidth) * (1.35);
                         }
 
@@ -148,10 +140,10 @@
                 setInterval(drawAtom, 45);
             </script>
         </div>
-        <div>
-            <h1>Audio und Video</h1>
-                <article id="rightbound">
-                    <h2>Audio-Sample</h2>
+        <div id="Explanation">
+            <h2>Was macht OpenAI?</h2>
+                <article>
+                    <h3>Audio-Sample</h3>
                     <audio controls>
                         Die Audio Datei konnte nicht eingebunden werden!
                         <source src="assets/RB61 Zugbus beschleunigt.wav" type="audio/wav">
@@ -160,58 +152,63 @@
                     </audio>
                 </article>
                 <article>
-                    <h2>Video-Sample</h2>
+                    <h3>Video-Sample</h3>
                     <p>to be done</p>
                 </article>
         </div>
+        <div>Plathalter für .svg</div>
+        <div id="Chatbot">
+            <h2>Teste den Chatbot!</h2>
+            <article>
+                <div id="Antwort"></div>
+                <button id="Button" onclick="getData();this.innerHTML = '...';">Stelle eine Frage</button>
+            </article>
+           
+            <script>
+                let text = "";
+                function getData() {
+                    let prompt = window.prompt("gib mir daten");
+                    let myMsg = document.createElement("div");
+                    myMsg.innerHTML = prompt;
+                    document.getElementById("Antwort").append(myMsg);
+                    text += prompt;
+                    $.ajax({
+                        url: 'https://api.openai.com/v1/engines/text-davinci-002/completions',
+                        type: 'POST',
+                        headers: {
+                            'Authorization': 'Bearer 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',
+                            'Content-Type': 'application/json'
+                        },
+                        data: JSON.stringify({
+                            'prompt': prompt,
+                            'temperature': 0.9,
+                            'max_tokens': 60,
+                            'top_p': 0.9,
+                            'frequency_penalty': 2.0,
+                            'presence_penalty': 0.0
+                        }),
+                        success: function (result) {
+                            let textZurück = result.choices[0].text;
+                            $('#Button').html("get data");
+        
+                            let msg = document.createElement("div");
+                            msg.innerHTML = textZurück;
+                            document.getElementById("Antwort").append(msg);
+                            text += textZurück
+                        },
+                        error: function (error) {
+                            alert("Cannot get data");
+                            $('#Button').html("get data");
+                        }
+                    });
+                }
+            </script>
+        </div>
+        <div>
+            Hier soll meine Anfrage hin.
+        </div>
     </div>
 
-
-
-    <br>
-    <div id="der-text"></div>
-    <button id="der-button" onclick="getData();this.innerHTML = '...';">get data</button>
-    <script>
-
-        let text = "";
-        function getData() {
-            let prompt = window.prompt("gib mir daten");
-            let myMsg = document.createElement("div");
-            myMsg.innerHTML = prompt;
-            document.getElementById("der-text").append(myMsg);
-            text += prompt;
-            $.ajax({
-                url: 'https://api.openai.com/v1/engines/text-davinci-002/completions',
-                type: 'POST',
-                headers: {
-                    'Authorization': 'Bearer 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',
-                    'Content-Type': 'application/json'
-                },
-                data: JSON.stringify({
-                    'prompt': prompt,
-                    'temperature': 0.9,
-                    'max_tokens': 60,
-                    'top_p': 0.9,
-                    'frequency_penalty': 2.0,
-                    'presence_penalty': 0.0
-                }),
-                success: function (result) {
-                    let textZurück = result.choices[0].text;
-                    $('#der-button').html("get data");
-
-                    let msg = document.createElement("div");
-                    msg.innerHTML = textZurück;
-                    document.getElementById("der-text").append(msg);
-                    text += textZurück
-                },
-                error: function (error) {
-                    alert("Cannot get data");
-                    $('#der-button').html("get data");
-                }
-            });
-        }
-
-    </script>
     <div id="footer">
         <p>Autor: Elias Vollrath, 2022</p>
         <img src="assets/atom_mono_bold_640.png" alt="Logo" width="120" height="120" id="footer_logo" />
