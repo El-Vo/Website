@@ -3,9 +3,10 @@
 
 /* Der body-Selektor: Attribute des Elements "body"*/
 body {
-    background-color: #ffffff;
+    background-color: #e0e0e0;
     color: #1a181b;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.75;
 }
 
 h1,
@@ -16,35 +17,21 @@ p {
     padding-left: 15px;
 }
 
-h1 {
-    padding-top: 0.5em;
-}
-
-#wrapper {
-    width: 1000px;
-    min-height: 400px;
-    margin: auto;
-    margin-top: 1.5rem;
-    background-color: #dddddd;
-}
-
 #navigation {
-    font-size: 16px;
-    background-color: #cccccc;
+    font-size: 20px;
     color: #333333;
     padding: 0.5rem;
-    margin-bottom: 1rem;
-    margin: auto;
+    width:100%;
+    position:fixed;
 }
 
 #navigation ul {
 
     text-align: center;
-    margin: auto;
+    margin:auto;
 }
 
 #navigation li {
-    list-style-type: ngrid-one;
     font-size: 1em;
     font-weight: bold;
     display: inline-block;
@@ -72,43 +59,32 @@ h1 {
 article {
     color: #1a181b;
     background-color: #cccccc;
-    border: #000000;
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 1px;
-    margin: 2em;
+    margin-bottom: 60px;
+    margin-top:60px;
     padding: 2.5em;
-    box-shadow: 1px 1px #888888;
     text-align: justify;
     max-width: 70%;
-    transition: 1s ease-in-out;
-    margin-left: 0em;
+    margin-left: 60px;
     margin-right: auto;
+
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  18px 18px 36px #bebebe,
+                 -18px -18px 36px #ffffff;
+
+    transition: 0.5s ease-in-out;
 }
 
 article:hover {
-    margin-left: 0.5em;
+    border-radius: 50px;
+background: #e0e0e0;
+box-shadow:  12px 12px 24px #9d9d9d,
+             -12px -12px 24px #ffffff;
 }
 
 article:nth-child(odd) {
-    color: #1a181b;
-    background-color: #cccccc;
-    border: #000000;
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 1px;
-    margin: 2em;
-    padding: 2.5em;
-    box-shadow: 1px 1px #888888;
-    text-align: justify;
-    max-width: 70%;
-    transition: 1s ease-in-out;
-    margin-right: 0;
+    margin-right:60px;
     margin-left: auto;
-}
-
-article:nth-child(odd):hover {
-    margin-right: 0.5em;
 }
 
 #articleentry {
@@ -123,7 +99,7 @@ audio {
 a:link,
 a:visited {
     color: #1a181b;
-    text-decoration: ngrid-one;
+    font-style:normal;
     cursor: pointer;
 }
 
@@ -138,31 +114,24 @@ a:visited {
     display: inline-block;
 }
 
-#content {
-    display: inline-block;
-    justify-content: center;
-}
-
 .grid-container {
     display:grid;
-    grid-template-columns:2fr.1fr;
+    grid-template-columns:2fr 1fr;
     grid-gap: 1em;
-    grid-auto-rows: minmax(100px, auto);
-    grid-auto-columns: minmax(1fr, auto);
+    grid-auto-rows: minmax(100vh, auto);
 
-    border:#000000;
-    border-style:solid;
+    align-items:center;
+    justify-items: center;
 }
 
 .grid-container > div{
-    border:#000000;
-    border-style: dashed;
-
+    /* border-style: solid;
+    border-radius:1px; */
 }
 
 #atom {
-    width:1000px;
-    height:1000px;
+    width:30vw;
+    height:30vw;
 }
 
 
@@ -173,19 +142,12 @@ a:visited {
         grid-template-columns:1fr;
         grid-gap: 1em;
         grid-auto-rows: minmax(100px, auto);
-        grid-auto-columns: minmax(1fr, auto);
-
-        border:brown;
-        background-color: brown;
-        border-style:solid;
     }
 
     #atom {
         width:500px;
         height:500px;
-        border:#000000;
-        border-style:groove;
-    } 
+    }
 }
 
 /* Smartphones */
@@ -195,15 +157,30 @@ a:visited {
         grid-template-columns:1fr;
         grid-gap: 1em;
         grid-auto-rows: minmax(100px, auto);
-        grid-auto-columns: minmax(1fr, auto);
-
-        border:aqua;
-        background-color: aqua;
-        border-style:solid;
     }
 
     #atom {
         width:300px;
         height:300px;
+    }
+
+    article {
+        margin-right: auto;
+        margin-left:auto;
+    }
+    
+    article:hover {
+        margin-right: auto;
+        margin-left:auto;
+    }
+    
+    article:nth-child(odd) {
+        margin-right: auto;
+        margin-left:auto;
+    }
+    
+    article:nth-child(odd):hover {
+        margin-right: auto;
+        margin-left:auto;
     }
 }
