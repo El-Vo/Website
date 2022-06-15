@@ -22,8 +22,8 @@
         <nav>
             <ul>
                 <li><a href="#Start">Start</a></li>
-                <li><a href="#Explanation">Wer ist OpenAI?</a></li>
-                <li><a href="#Chatbot">Teste den Chatbot!</a></li>
+                <li><a href="#Explanation">Medien</a></li>
+                <li><a href="#Chatbot">Teste den Chatbot</a></li>
             </ul>
         </nav>
     </div>
@@ -61,7 +61,7 @@
                 var atomRadius = c.width * 0.025;
                 var atomBorderColor = "#EA526F";
                 var atomFillColor = "#EA526F";
-                var ellipseColor = "#AAAAAA";
+                var ellipseColor = "#bbcde5";
                 var electronColor = "#EA526F";
 
                 var ellipseWidth = c.width * 0.18;
@@ -84,7 +84,7 @@
 
                             ctx.beginPath();
                         ctx.ellipse(centerX, centerX, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
-                        ctx.lineWidth = atomRadius / 8;
+                        ctx.lineWidth = atomRadius / 12;
                         ctx.strokeStyle = ellipseColor;
                         ctx.stroke();
 
@@ -131,24 +131,25 @@
             </script>
         </div>
         <div id="Explanation">
-            <h2>Was macht OpenAI?</h2>
+            <h2>Medien</h2>
                 <article>
-                    <h3>Audio-Sample</h3>
+                    <h3>Audio Jingle</h3>                  
+                    <img src="assets/Material_Logo_Play.svg" alt="Play Logo" id="music_button" width="100" height="100"\>
                     <audio controls>
                         Die Audio Datei konnte nicht eingebunden werden!
-                        <source src="assets/RB61 Zugbus beschleunigt.wav" type="audio/wav">
-                        <source src="assets/RB61 Zugbus beschleunigt.m4a" type="audio/m4a">
-                        <source src="assets/RB61 Zugbus beschleunigt.mp3" type="audio/mp3">
+                        <source src="assets/Jingle.wav" type="audio/wav">
+                        <source src="assets/Jingle.aiff" type="audio/aiff">
+                        <source src="assets/Jingle.m4a" type="audio/m4a">
                     </audio>
                 </article>
                 <article>
-                    <h3>Video-Sample</h3>
-                    <p>to be done</p>
+                    <h3>Video</h3>
+                    <img src="assets/Material_Logo_Video.svg" alt="Video Logo" id="music_button" width="100" height="100"\>
                 </article>
         </div>
         <div><img id="boxshadow" src="assets/atom_zoom.svg" alt="atom image zoomed in" width="700" height="700"/></div>
         <div id="Chatbot">
-            <h2>Teste den Chatbot!</h2>
+            <h2>Teste den Chatbot</h2>
             <article>
                 <div id="Antwort"></div>
                 <button id="Button" onclick="getData();this.innerHTML = '...';">Stelle eine Frage</button>
@@ -157,7 +158,7 @@
             <script>
                 let text = "";
                 function getData() {
-                    let prompt = window.prompt("gib mir daten");
+                    let prompt = window.prompt("Anfrage an die KI:");
                     let myMsg = document.createElement("div");
                     myMsg.innerHTML = prompt;
                     document.getElementById("Antwort").append(myMsg);
