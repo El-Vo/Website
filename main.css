@@ -1,5 +1,5 @@
 body {
-    background-color: #f7f7ff;
+    background-color: #e7e7ef;
     color: #070600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.75;
@@ -10,87 +10,85 @@ h2,
 h3,
 p {
     padding-bottom: 0.5em;
-    /* padding-left: 60px; */
 }
 
-h1 {
+h1,h2 {
     text-decoration-line: overline;
     text-decoration-color: #ea526f;
     text-decoration-thickness: 5px;
-    /* Wahnsinn */
+    font-size:30px;
 }
 
 #navigation {
     font-size: 20px;
     color: #070600;
-    background-color: #f7f7ff;
+    background-color: #e7e7ef;
     padding: 1rem;
     width: 100vw;
     position: fixed;
     top: 0;
-
-    background: #f7f7ff;
-    box-shadow: 8px 8px 16px #f0f0f7,
-        -8px -8px 16px #fefeff;
+    border-color: #d2d2d9;
+    border-width:2px;
+    border-style:none none solid none;
 }
 
 #navigation ul {
     text-align: center;
     margin: auto;
+    padding:0.5em;
 }
 
 #navigation li {
     font-weight: bold;
     display: inline-block;
-    padding: 0.5em;
+    padding: 0.25em;
     width: 200px;
     text-align: center;
     margin-left: 1em;
     margin-right: 1em;
 
     border-radius: 50px;
-    background: radial-gradient(#ffffff, #f7f7ff);
-    box-shadow: 12px 12px 24px #d2d2d9,
-        -12px -12px 24px #ffffff;
+    background: radial-gradient(#f4f4f4, #e7e7ef);
+    box-shadow: 4px 4px 10px #d2d2d9,
+        -4px -4px 10px #ffffff;
 
     transition: 0.25s;
 }
 
 #navigation li:hover {
     border-radius: 50px;
-    background: radial-gradient(#4ee3a8 5%, #77b89e 95%);
-    box-shadow: 6px 6px 24px #bebebe,
-        -6px -6px 24px #8ae0be;
+    background: radial-gradient(#43D5F3 5%, #23B5D3 95%);
+    box-shadow: 2px 2px 5px #bebebe,
+        -2px -2px 5px #43D5F3 ;
 }
 
 article {
     color: #1a181b;
-    background-color: #cccccc;
-    margin-bottom: 60px;
-    margin-top: 60px;
+    margin-bottom: 4em;
+    margin-top: 0em;
     padding: 2.5em;
     text-align: justify;
     max-width: 70%;
-    margin-left: 60px;
+    margin-left: 0px;
     margin-right: auto;
 
-    border-radius: 50px;
-    background: #f7f7ff;
-    box-shadow: 20px 20px 60px #d2d2d9,
-        -20px -20px 60px #ffffff;
+    border-radius: 30px;
+    background: #e7e7ef;
+    box-shadow: 3px 3px 10px #d2d2d9,
+        -3px -3px 10px #ffffff;
 
-    transition: 0.5s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 article:hover {
-    border-radius: 50px;
-    background: #f7f7ff;
-    box-shadow: 12px 12px 24px #d2d2d9,
-        -12px -12px 24px #ffffff;
+    border-radius: 30px;
+    background: #e7e7ef;
+    box-shadow: 10px 10px 12px #d2d2d9,
+        -10px -10px 12px #f7f7ff;
 }
 
 article:nth-child(odd) {
-    margin-right: 60px;
+    margin-right: 0px;
     margin-left: auto;
 }
 
@@ -110,6 +108,10 @@ a:visited {
     cursor: pointer;
 }
 
+a:hover {
+    color:#e7e7ef;
+}
+
 #footer {
     background-color: #666666;
     padding: 3em;
@@ -124,11 +126,27 @@ a:visited {
 .grid-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-gap: 1em;
-    grid-auto-rows: minmax(100vh, auto);
+    grid-auto-rows: minmax(100px, auto);
+    margin:4em;
 
-    align-items: center;
+    align-items:flex-end;
     justify-items: stretch;
+}
+
+.grid-container > div {
+    border-color: #d2d2d9;
+    border-width:2px;
+    border-style:none none solid none;
+    margin:4em;
+}
+
+#boxshadow {
+    border-radius: 30px;
+    background: #e7e7ef;
+    box-shadow: 3px 3px 10px #d2d2d9,
+        -3px -3px 10px #ffffff;
+        width: 30vw;
+        height:30vw;
 }
 
 #atom {
@@ -147,7 +165,7 @@ a:visited {
     padding:1em;
     margin-top:10px;
     border-radius: 50px;
-    background: radial-gradient(#ffffff, #f7f7ff);
+    background: radial-gradient(#ffffff, #e7e7ef);
     box-shadow: 6px 6px 24px #d2d2d9,
         -6px -6px 24px #ffffff;
 
@@ -155,50 +173,67 @@ a:visited {
 }
 
 #Button:hover {
+    color:#e7e7ef;
+    font-size: 15px;
     border-radius: 50px;
-    background: radial-gradient(#4ee3a8 5%, #77b89e 95%);
+    background: radial-gradient(#43D5F3 5%, #23B5D3 95%);
     box-shadow: 3px 3px 24px #bebebe,
-        -3px -3px 24px #8ae0be;
+        -3px -3px 24px #43D5F3;
 }
 
 #Antwort {
     font-size: 20px;
     text-decoration-line: underline;
-    text-decoration-color: #007ea7;
-    text-decoration-thickness: 5px;
+    text-decoration-color: #23B5D3;
+    text-decoration-thickness: 3px;
     text-decoration-skip-ink: all;
 }
+
+u {
+    text-decoration-line:overline;
+    text-decoration-color: #ea526e;
+    text-decoration-thickness: 8px;
+    text-decoration-style:dotted;
+}
+
+
 
 
 /* Tablets */
 @media screen and (max-width:1280px) {
-    h1 {
-        margin-top: 3em;
-    }
-
     .grid-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 1em;
         grid-auto-rows: minmax(100px, auto);
+        
     }
 
     #atom {
         width: 50vh;
         height: 50vh;
     }
+    #boxshadow {
+        width: 50vw;
+        height:50vw;
+    }
 }
 
 /* Smartphones */
 @media screen and (max-width:640px) {
+    body {
+        font-size:15px;
+    }
 
     h1 {
-        margin-top: 6em;
+        margin-top: 5em;
+        font-size:22px;
     }
 
     #navigation {
         line-height:1.25em;
         font-size:12px;
+        width:85vw;
     }
 
     #navigation li {
@@ -211,17 +246,29 @@ a:visited {
         grid-template-columns: 1fr;
         grid-gap: 1em;
         grid-auto-rows: minmax(100px, auto);
+        margin:0em;
+
+        align-items:center;
+        justify-items: center;
+    }
+    .grid-container > div {
+        margin:1em;
     }
 
     #atom {
-        width: 70vw;
-        height: 70vw;
-        ;
+        width: 80vw;
+        height: 80vw;
+    }
+
+    #boxshadow {
+        width: 80vw;
+        height:80vw;
     }
 
     article {
         margin-left: 0em;
         margin-right: 0em;
+        max-width: 65vw;
     }
 
     article:hover {
@@ -235,25 +282,5 @@ a:visited {
 
     article:nth-child(odd):hover {
         margin-right: 0em;
-    }
-
-    article {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    article:hover {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    article:nth-child(odd) {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    article:nth-child(odd):hover {
-        margin-right: auto;
-        margin-left: auto;
     }
 }

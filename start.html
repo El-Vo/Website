@@ -11,7 +11,6 @@
     <meta name="author" content="elias.vollrath">
     <meta name="robots" content="noindex, nofollow">
     <link href="assets/atom_no_electrons_logo_20.png" rel="icon">
-    <!-- rel="shortcut icon" ist nicht konform, Webautoren sollen laut Mozilla Docs es auf keinen Fall mehr verwenden -->
     <link href="main.css" rel="stylesheet" type="text/css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -29,23 +28,25 @@
         </nav>
     </div>
 
+    <div><br><br></div>
+
     <div class="grid-container">
-            <div id="Start">
-                <header>
-                    <h1>GPT-3 Showcase</h1>
-                </header>
-                <article>
-                    <h2>Was ist GPT-3?</h2>
-                    <p>GPT-3 ist ein Set an KI-Modellen, die natürliche Sprache erkennen, verstehen, verarbeiten und neu generieren können.</p>
-                    <p>Trainiert mit einer breiten Masse an Informationen, kann das System eine Antwort auf die allermeisten Fragen formulieren. Ob Popkultur, Kochen, Wissenschaft, berühmte Gebäude, Film und Fernsehen und IT, das GPT-3 System hat davon höchstwahrscheinlich schon einmal gehört.</p>
-                </article>
-                <article>
-                    <h2>Deren größte Stärke: Mustererkennung</h2>
-                    <p>Jede moderne Sprache basiert auf Mustern. Auch uns Menschen ist dies kein Geheimnis. Wir erkennen automatisch bekannte Wortgruppierungen, egal, bo edi Buecbhsnta villgö dhuirceennadr dnsi.</p>
-                    <p>Die GPT-3 Modelle können ebenfalls begonnene Muster und den Kontext einer Anfrage oft erkennen und aus diesen eine sinnvolle Antwort generieren.</p>
-                    <p>Beispielfragen an die KI kommen unten :)</p>
-                </article>
-            </div>
+        <div id="Start">
+            <header>
+                <h1>GPT-3 Showcase</h1>
+            </header>
+            <article>
+                <h3>Was ist GPT-3?</h3>
+                <p>GPT-3 ist ein Set an KI-Modellen, die natürliche Sprache erkennen, verstehen, verarbeiten und neu generieren können.</p>
+                <p>Trainiert mit einer breiten Masse an Informationen, kann das System eine Antwort auf die allermeisten Fragen formulieren. Ob Popkultur, Kochen, Wissenschaft, berühmte Gebäude, Film und Fernsehen und IT, das GPT-3 System hat davon höchstwahrscheinlich schon einmal gehört.</p>
+            </article>
+            <article>
+                <h3>Deren größte Stärke: <u>Mustererkennung</u></h3>
+                <p>Jede moderne Sprache basiert auf Mustern. Auch uns Menschen ist dies kein Geheimnis. Wir erkennen automatisch bekannte Wortgruppierungen, egal, bo edi Buecbhsatn villög dhuirceennadr snid.</p>
+                <p>Die GPT-3 Modelle können ebenfalls begonnene Muster und den Kontext einer Anfrage oft erkennen und aus diesen eine sinnvolle Antwort generieren.</p>
+                <p>Beispielfragen an die KI kommen unten :)</p>
+            </article>
+        </div>
         <div>
             <canvas id="atom" width="1000" height="1000">
                 Der Browser unterstützt offensichtlich kein Canvas-Element.
@@ -58,10 +59,10 @@
                 var centerX = c.width * 0.5;
                 var centerY = c.height * 0.5;
                 var atomRadius = c.width * 0.025;
-                var atomBorderColor = "#999999";
-                var atomFillColor = "#BBBBBB";
+                var atomBorderColor = "#EA526F";
+                var atomFillColor = "#EA526F";
                 var ellipseColor = "#AAAAAA";
-                var electronColor = "#999999";
+                var electronColor = "#EA526F";
 
                 var ellipseWidth = c.width * 0.18;
                 var ellipseHeight = c.height * 0.46;
@@ -80,9 +81,10 @@
                     ctx.closePath();
 
                     for (let ellipseRot = 0; ellipseRot < 1; ellipseRot = ellipseRot + 0.25) {
-                        ctx.beginPath();
-                        ctx.ellipse(centerX, centerY, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
-                        ctx.lineWidth = atomRadius / 4;
+
+                            ctx.beginPath();
+                        ctx.ellipse(centerX, centerX, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
+                        ctx.lineWidth = atomRadius / 8;
                         ctx.strokeStyle = ellipseColor;
                         ctx.stroke();
 
@@ -129,7 +131,7 @@
             </script>
         </div>
         <div id="Explanation">
-            <h1>Was macht OpenAI?</h1>
+            <h2>Was macht OpenAI?</h2>
                 <article>
                     <h3>Audio-Sample</h3>
                     <audio controls>
@@ -144,9 +146,9 @@
                     <p>to be done</p>
                 </article>
         </div>
-        <div>Plathalter für .svg</div>
+        <div><img id="boxshadow" src="assets/atom_zoom.svg" alt="atom image zoomed in" width="700" height="700"/></div>
         <div id="Chatbot">
-            <h1>Teste den Chatbot!</h1>
+            <h2>Teste den Chatbot!</h2>
             <article>
                 <div id="Antwort"></div>
                 <button id="Button" onclick="getData();this.innerHTML = '...';">Stelle eine Frage</button>
