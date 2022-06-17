@@ -143,8 +143,12 @@
                     </audio>
                 </article>
                 <article>
-                    <h3>Video</h3>
-                    <img src="assets/Material_Logo_Video.svg" alt="Video Logo" id="music_button" width="100" height="100"\>
+                    <h3>Was fragt man so einen Chatbot?</h3>
+                    <video width="1280" height="720" id="video" controls>
+                        <source src="assets/prompt_examples.webm" type="video/webm">
+                        <source src="assets/prompt_examples.mp4" type="video/mp4">
+                        <source src="assets/prompt_examples.avi" type="video/avi">
+                    </video>
                 </article>
         </div>
         <div><img id="boxshadow" src="assets/atom_zoom.svg" alt="atom image zoomed in" width="700" height="700"/></div>
@@ -152,7 +156,7 @@
             <h2>Teste den Chatbot</h2>
             <article>
                 <div id="Antwort"></div>
-                <button id="Button" onclick="getData();this.innerHTML = '...';">Stelle eine Frage</button>
+                <button id="Button" onclick="getData();this.innerHTML = '...';">Ask me anything!</button>
             </article>
            
             <script>
@@ -180,7 +184,7 @@
                         }),
                         success: function (result) {
                             let textZurück = result.choices[0].text;
-                            $('#Button').html("get data");
+                            $('#Button').html("Ask me anything!");
         
                             let msg = document.createElement("div");
                             msg.innerHTML = textZurück;
@@ -194,6 +198,16 @@
                     });
                 }
             </script>
+        </div>
+        <div>
+            <article>
+                <h3>Wichtige Anmerkungen:</h3>
+                <ul>
+                    <li>Die Anfragen werden idealerweise in Englisch formuliert.</li>
+                    <li>Es ist zu erwarten, dass einige Antworten der KI nicht richtig oder unsinnig sind.</li>
+                    <li>Es ist nicht erlaubt, illegale oder pornographische Inhalte mit der KI zu generieren.</li>
+                </ul>
+            </article>
         </div>
     </div>
 
