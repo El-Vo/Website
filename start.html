@@ -37,17 +37,22 @@
             </header>
             <article>
                 <h3>Was ist GPT-3?</h3>
-                <p>GPT-3 ist ein Set an KI-Modellen, die natürliche Sprache erkennen, verstehen, verarbeiten und neu generieren können.</p>
-                <p>Trainiert mit einer breiten Masse an Informationen, kann das System eine Antwort auf die allermeisten Fragen formulieren. Ob Popkultur, Kochen, Wissenschaft, berühmte Gebäude, Film und Fernsehen und IT, das GPT-3 System hat davon höchstwahrscheinlich schon einmal gehört.</p>
+                <p>GPT-3 ist ein Set an KI-Modellen, die natürliche Sprache erkennen, verstehen, verarbeiten und neu
+                    generieren können.</p>
+                <p>Trainiert mit einer breiten Masse an Informationen, kann das System eine Antwort auf die allermeisten
+                    Fragen formulieren. Ob Popkultur, Kochen, Wissenschaft, berühmte Gebäude, Film und Fernsehen und IT,
+                    das GPT-3 System hat davon höchstwahrscheinlich schon einmal gehört.</p>
             </article>
             <article>
                 <h3>Deren größte Stärke: <u>Mustererkennung</u></h3>
-                <p>Jede moderne Sprache basiert auf Mustern. Auch uns Menschen ist dies kein Geheimnis. Wir erkennen automatisch bekannte Wortgruppierungen, egal, bo edi Buecbhsatn villög dhuirceennadr snid.</p>
-                <p>Die GPT-3 Modelle können ebenfalls begonnene Muster und den Kontext einer Anfrage oft erkennen und aus diesen eine sinnvolle Antwort generieren.</p>
+                <p>Jede moderne Sprache basiert auf Mustern. Auch uns Menschen ist dies kein Geheimnis. Wir erkennen
+                    automatisch bekannte Wortgruppierungen, egal, bo edi Buecbhsatn villög dhuirceennadr snid.</p>
+                <p>Die GPT-3 Modelle können ebenfalls begonnene Muster und den Kontext einer Anfrage oft erkennen und
+                    aus diesen eine sinnvolle Antwort generieren.</p>
             </article>
         </div>
         <div>
-            <canvas id="atom" width="1000" height="1000">
+            <canvas id="atom" width="1000" height="1000" alt="Animierte Atomzeichnung">
                 Der Browser unterstützt offensichtlich kein Canvas-Element.
             </canvas>
 
@@ -81,7 +86,7 @@
 
                     for (let ellipseRot = 0; ellipseRot < 1; ellipseRot = ellipseRot + 0.25) {
 
-                            ctx.beginPath();
+                        ctx.beginPath();
                         ctx.ellipse(centerX, centerX, ellipseHeight, ellipseWidth, ellipseRot * Math.PI, 0, 2 * Math.PI);
                         ctx.lineWidth = atomRadius / 12;
                         ctx.strokeStyle = ellipseColor;
@@ -131,34 +136,35 @@
         </div>
         <div id="Medien">
             <h2>Medien</h2>
-                <article>
-                    <h3>Audio Jingle</h3>                  
-                    <img src="assets/Material_Logo_Play.svg" alt="Play Logo" id="music_button" width="100" height="100"\>
-                    <audio controls>
-                        Die Audio Datei konnte nicht eingebunden werden!
-                        <source src="assets/Jingle.wav" type="audio/wav">
-                        <source src="assets/Jingle.aiff" type="audio/aiff">
-                        <source src="assets/Jingle.m4a" type="audio/m4a">
-                    </audio>
-                </article>
-                <article>
-                    <h3>Was fragt man so einen Chatbot?</h3>
-                    <video width="1280" height="720" id="video" controls>
-                        <source src="assets/prompt_examples.webm" type="video/webm">
-                        <source src="assets/prompt_examples.mp4" type="video/mp4">
-                        <source src="assets/prompt_examples.avi" type="video/avi">
-                    </video>
-                    <a href="assets/GPT_3_Anfragen_PDF_UA_Web.pdf">PDF-Datei aller Beispielanfragen</a>
-                </article>
+            <article>
+                <h3>Audio Jingle</h3>
+                <img src="assets/Material_Logo_Play.svg" alt="Play Logo" id="music_button" width="100" height="100">
+                <audio controls>
+                    <source src="assets/Jingle.wav" type="audio/wav">
+                    <source src="assets/Jingle.aiff" type="audio/aiff">
+                    <source src="assets/Jingle.m4a" type="audio/m4a">
+                    Die Audio Datei konnte nicht eingebunden werden!
+                </audio>
+            </article>
+            <article>
+                <h3>Was fragt man so einen Chatbot?</h3>
+                <video width="1280" height="720" id="video" controls>
+                    <source src="assets/prompt_examples.webm" type="video/webm">
+                    <source src="assets/prompt_examples.mp4" type="video/mp4">
+                    <source src="assets/prompt_examples.avi" type="video/avi">
+                </video>
+                <a href="assets/GPT_3_Anfragen_PDF_UA_Web.pdf">PDF-Datei aller Beispielanfragen</a>
+            </article>
         </div>
-        <div><img id="boxshadow" src="assets/atom_zoom.svg" alt="atom image zoomed in" width="700" height="700"/></div>
+        <div><img id="boxshadow" src="assets/atom_zoom.svg" alt="atom image zoomed in" width="700" height="700" /></div>
         <div id="Chatbot">
             <h2>Teste den Chatbot</h2>
             <article>
+                <h3>Chatverlauf</h3>
                 <div id="Antwort"></div>
                 <button id="Button" onclick="getData();this.innerHTML = '...';">Ask me anything!</button>
             </article>
-           
+
             <script>
                 let text = "";
                 function getData() {
@@ -185,7 +191,7 @@
                         success: function (result) {
                             let textZurück = result.choices[0].text;
                             $('#Button').html("Ask me anything!");
-        
+
                             let msg = document.createElement("div");
                             msg.innerHTML = textZurück;
                             document.getElementById("Antwort").append(msg);

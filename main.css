@@ -24,6 +24,13 @@ h3 {
     font-size: 25px;
 }
 
+u {
+    text-decoration-line: overline;
+    text-decoration-color: #ea526e;
+    text-decoration-thickness: 8px;
+    text-decoration-style: dotted;
+}
+
 #navigation {
     font-size: 20px;
     color: #bbcde5;
@@ -100,10 +107,6 @@ article:nth-child(odd) {
     margin-bottom: 0.75em;
 }
 
-audio {
-    margin: 1em;
-}
-
 a:link,
 a:visited {
     color: #bbcde5;
@@ -121,23 +124,6 @@ a:visited {
     display: inline-block;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    margin: 4em;
-
-    align-items: stretch;
-    justify-items: stretch;
-}
-
-.grid-container>div {
-    border-color: #8998ac;
-    border-width: 2px;
-    border-style: none none solid none;
-    margin: 4em;
-}
-
 #boxshadow {
     border-radius: 30px;
     background: #1a1b25;
@@ -147,12 +133,12 @@ a:visited {
     height: 30vw;
     margin-bottom: 2em;
 
-    transition:0.25s;
+    transition: 0.25s;
 }
 
 #boxshadow:hover {
     box-shadow: 12px 12px 18px #0a0b0f,
-    -12px -12px 18px #2a2b3b;
+        -12px -12px 18px #2a2b3b;
 }
 
 #atom {
@@ -160,9 +146,9 @@ a:visited {
     height: 30vw;
 }
 
-#video{
-    width:100%;
-    height:56%;
+#video {
+    width: 100%;
+    height: 56%;
 }
 
 #Start {}
@@ -200,21 +186,30 @@ a:visited {
     text-decoration-skip-ink: all;
 }
 
-u {
-    text-decoration-line: overline;
-    text-decoration-color: #ea526e;
-    text-decoration-thickness: 8px;
-    text-decoration-style: dotted;
-}
-
 #music_button {
     border-radius: 15px;
     background-color: #bbcde5;
-    background:#8998ac;
+    background: #8998ac;
     box-shadow: 6px 6px 24px #0a0b0f,
         -6px -6px 24px #2a2b3b;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 4em;
+
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+.grid-container>div {
+    border-color: #8998ac;
+    border-width: 2px;
+    border-style: none none solid none;
+    margin: 4em;
+}
 
 /* Tablets */
 @media screen and (max-width:1280px) {
